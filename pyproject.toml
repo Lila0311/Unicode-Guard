@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unicode-guard"
+version = "0.1.0"
+description = "Rule-based Unicode confusion attack detector for code review and CI/CD."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Group 13" }
+]
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.scripts]
+unicode-guard = "unicode_guard.scanner:main"
+unicode-guard-gui = "unicode_guard.gui:main"
+unicode-guard-demo = "unicode_guard.demo:main"
+
+[tool.setuptools.packages.find]
+include = ["unicode_guard*"]
+
+[tool.setuptools.package-data]
+unicode_guard = ["data/confusables.txt"]

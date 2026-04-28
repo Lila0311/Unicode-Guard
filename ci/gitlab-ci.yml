@@ -1,0 +1,5 @@
+unicode_guard:
+  image: python:3.12
+  stage: test
+  script:
+    - python -m unicode_guard . --fail-on HIGH
